@@ -62,6 +62,7 @@ SAFE_DIV = 0.0001
 try:
     STOP_WORDS = stopwords.words("english")
 except:
+    import nltk
     nltk.download('stopwords')
     STOP_WORDS = stopwords.words("english")
 
