@@ -1,8 +1,6 @@
 import numpy as np
 import pandas as pd
-from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
-from bs4 import BeautifulSoup
 from fuzzywuzzy import fuzz
 import warnings
 warnings.filterwarnings('ignore')
