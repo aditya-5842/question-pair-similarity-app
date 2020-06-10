@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from nltk.stem import PorterStemmer
+from nltk.corpus import stopwords
 from fuzzywuzzy import fuzz
 import warnings
 warnings.filterwarnings('ignore')
@@ -57,7 +58,12 @@ def basic_feature_extraction(row):
 
 # To get the results in 4 decemal points
 SAFE_DIV = 0.0001
-STOP_WORDS = stopwords.words("english")
+
+try:
+    STOP_WORDS = stopwords.words("english")
+except:
+    nltk.download('stopwords')
+    STOP_WORDS = stopwords.words("english")
 
 def get_token_features(q1, q2):
     token_features = [0.0]*10
